@@ -4,7 +4,7 @@ terraform {
 
   # To use S3 as the backend, uncomment the below line
   #backend "s3" {}
-  
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
