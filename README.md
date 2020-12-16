@@ -7,6 +7,8 @@
 # Installing and running this project
 <details>
   <summary>Prerequisites for running this project</summary>
-  * AWS CLI version 2
-  * Terraform CLI 0.14.5 
+  
+##### The project has the following dependencies  
+- AWS CLI version 2
+- Terraform CLI 0.14.2 
 </details>
