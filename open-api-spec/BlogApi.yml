@@ -1,0 +1,179 @@
+openapi: 3.0.0
+info:
+  title: BlogService
+  version: '1.0'
+  description: An Blog Service API
+servers:
+  - url: 'https://5fd972e87e05f000170d38a0.mockapi.io'
+paths:
+  '/api/v1/blog/{blogId}':
+    get:
+      summary: Get details about a blog post
+      tags:
+        - Blog
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/blog'
+              examples:
+                example-1:
+                  value:
+                    id: '1'
+                    createdAt: '2020-12-15T09:46:02.153Z'
+                    author: author 1
+                    title: title 1
+                    Contents: Contents 1
+        '404':
+          description: Not Found
+      operationId: 'get-api-v1-blog-:blogId'
+      description: Returns the blog post specified by the blog id
+      x-amazon-apigateway-integration:
+        $ref: '#/components/x-amazon-apigateway-integrations/integration-get'
+    put:
+      summary: Update a blog post
+      operationId: 'put-api-v1-blog-:blogId'
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: Not Found
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/blog'
+            examples:
+              example-1:
+                value:
+                  createdAt: '2020-12-15T09:46:02.153Z'
+                  author: author 1
+                  title: title 1
+                  Contents: Contents 1
+        description: Accept a Blog json object containing the blog post updates
+      description: Update the blog post identified by the path parameter
+      x-amazon-apigateway-integration:
+        $ref: '#/components/x-amazon-apigateway-integrations/integration-put'
+      tags:
+        - Blog
+    delete:
+      summary: Delete a blog post
+      operationId: 'delete-api-v1-blog-:blogId'
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: Not Found
+      description: Delete a blog post identified by the blogId path parameter
+      x-amazon-apigateway-integration:
+        $ref: '#/components/x-amazon-apigateway-integrations/integration-delete'
+      tags:
+        - Blog
+    parameters:
+      - schema:
+          type: number
+        name: blogId
+        in: path
+        required: true
+        description: The identifier of the blog post
+  /api/v1/blog:
+    post:
+      summary: Create a blog post
+      operationId: post-api-v1-blog
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/blog'
+              examples:
+                example-1:
+                  value:
+                    id: '1'
+                    createdAt: '2020-12-15T09:46:02.153Z'
+                    author: author 1
+                    title: title 1
+                    Contents: Contents 1
+      description: Create a new blog post
+      x-amazon-apigateway-integration:
+        $ref: '#/components/x-amazon-apigateway-integrations/integration-post'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/blog'
+            examples:
+              example-1:
+                value:
+                  createdAt: '2020-12-15T09:46:02.153Z'
+                  author: author 1
+                  title: title 1
+                  Contents: Contents 1
+      tags:
+        - Blog
+components:
+  x-amazon-apigateway-integrations:
+    integration-get:
+      type:   http_proxy
+      httpMethod: GET
+      uri: https://5fd972e87e05f000170d38a0.mockapi.io/api/v1/blog/{blogId}
+      payloadFormatVersion: 1.0
+    integration-put:
+      type:   http_proxy
+      httpMethod: PUT
+      uri: https://5fd972e87e05f000170d38a0.mockapi.io/api/v1/blog/{blogId}
+      payloadFormatVersion: 1.0
+    integration-delete:
+      type:   http_proxy
+      httpMethod: DELETE
+      uri: https://5fd972e87e05f000170d38a0.mockapi.io/api/v1/blog/{blogId}
+      payloadFormatVersion: 1.0
+    integration-post:
+      type:   http_proxy
+      httpMethod: POST
+      uri: https://5fd972e87e05f000170d38a0.mockapi.io/api/v1/blog
+      payloadFormatVersion: 1.0
+  schemas:
+    blog:
+      description: ''
+      type: object
+      x-examples:
+        example-1:
+          id: '1'
+          createdAt: '2020-12-15T09:46:02.153Z'
+          author: author 1
+          title: title 1
+          Contents: Contents 1
+      properties:
+        id:
+          type: string
+          minLength: 1
+          description: Identifier of the blog post
+        createdAt:
+          type: string
+          minLength: 1
+          description: Time the blog was created
+        author:
+          type: string
+          minLength: 1
+          description: Person who wrote the blog post
+        title:
+          type: string
+          minLength: 1
+          description: Title of the blog post
+        Contents:
+          type: string
+          minLength: 1
+          description: Contents of the blog post
+      required:
+        - createdAt
+        - author
+        - title
+        - Contents
+      x-tags:
+        - Blog
+tags:
+  - name: Blog
