@@ -4,10 +4,10 @@
 
  A Terraform project for provisioning an AWS API Gateway using an OpenAPI specification file to configure each route in the gateway. The project will also use Terragrunt to keep the configurations DRY. Terraform Cloud is used to manage the the project's remote files. GitHub Actions is used to implement the CI/CD pipeline
 
-### CI/CD pipeline for AWS API Gateway using GitHub Actions & Terraform
+## CI/CD pipeline for AWS API Gateway using GitHub Actions & Terraform
 <kbd><img src="./docs/assets/images/API-Gateway.jpg" /></kbd>
 
-### Installing and running this project
+## Installing and running this project
 <details>
   <summary>Prerequisites for running this project</summary>
   
