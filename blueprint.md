@@ -1,10 +1,6 @@
-<!-- ⚠️ This README has been generated from the file(s) "blueprint.md" ⚠️--><h1 align="center">aws-api-gateway-example</h1>
+{{ template:title }}
 
-<p align="center">
-		<a href="https://img.shields.io/badge/proof--of--concept-in--progress-blue"><img alt="Project Status" src="https://img.shields.io/badge/proof--of--concept-in--progress-blue" height="20"/></a>
-<a href="https://github.com/AWS-Terraform-Projects/AWS-API-Gateway/actions/workflows/terraform.yml"><img alt="Terraform" src="https://github.com/AWS-Terraform-Projects/AWS-API-Gateway/workflows/Terraform/badge.svg" height="20"/></a>
-	</p>
-
+{{ template:badges }}
 
  A Terraform project for provisioning an AWS API Gateway using an OpenAPI specification file to configure each route in the gateway. The project will also use Terragrunt to keep the configurations DRY. Terraform Cloud is used to manage the the project's remote files. GitHub Actions is used to implement the CI/CD pipeline
 

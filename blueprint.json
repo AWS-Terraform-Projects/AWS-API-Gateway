@@ -1,0 +1,14 @@
+{
+  "badges": [
+    {
+      "alt": "Project Status",
+      "url": "https://img.shields.io/badge/proof--of--concept-in--progress-blue",
+      "img": "https://img.shields.io/badge/proof--of--concept-in--progress-blue"
+    },
+    {
+      "alt": "Terraform",
+      "url": "https://github.com/AWS-Terraform-Projects/AWS-API-Gateway/actions/workflows/terraform.yml",
+      "img": "https://github.com/AWS-Terraform-Projects/AWS-API-Gateway/workflows/Terraform/badge.svg"
+    }
+  ]
+}

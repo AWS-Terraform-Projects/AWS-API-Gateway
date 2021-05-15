@@ -1,0 +1,30 @@
+{
+  "name": "aws-api-gateway-example",
+  "version": "1.0.0",
+  "description": "A project demonstrating the use of an AWS API Gateway and Lambda",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@appnest/readme": "^1.2.7"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AWS-Terraform-Projects/AWS-API-Gateway.git"
+  },
+  "keywords": [
+    "aws",
+    "lambda"
+  ],
+  "author": "Dennis Chacko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AWS-Terraform-Projects/AWS-API-Gateway/issues"
+  },
+  "homepage": "https://github.com/AWS-Terraform-Projects/AWS-API-Gateway#readme"
+}
